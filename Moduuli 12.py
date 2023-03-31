@@ -23,9 +23,8 @@ try:
     vastausX = requests.get(pyyntöX)
     if vastausX.status_code == 200:
         json_vastaus = vastausX.json()
-
     print(f"keli: {json_vastaus['weather'][0] ['description']}")
     print(f"Lämpötila: {json_vastaus['main']['temp']}C°")
 
-except requests.exceptions.RequestException as e:
+except:
     print ("Hakua ei voitu suorittaa.")
